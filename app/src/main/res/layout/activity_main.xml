@@ -37,7 +37,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/attribut"
+            android:layout_toEndOf="@+id/attribut"
             android:padding="4dp"
             android:text="Skills"
             android:id="@+id/skills"/>

@@ -19,17 +19,22 @@ class MainActivity : AppCompatActivity() {
         val attFrag = Attribut()
         val skillfrag = skils()
         val savingThrow = sav_throw()
+        val weap_c = weap()
 
 
         attribut.setOnClickListener(){
             setCurrentFragment(attFrag)
-            }
+        }
         skills.setOnClickListener(){
             setCurrentFragment(skillfrag)
         }
         sav_throw.setOnClickListener(){
             setCurrentFragment(savingThrow)
         }
+        weapon.setOnClickListener(){
+            setCurrentFragment(weap_c)
+        }
+
     }
 
     private fun setCurrentFragment(fragment:Fragment)=
