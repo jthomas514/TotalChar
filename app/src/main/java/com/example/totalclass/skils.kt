@@ -12,32 +12,22 @@ class skils: Fragment(R.layout.skills) {
         super.onViewCreated(view, savedInstanceState)
 
         skill_save.setOnClickListener(){
-            var temp = 0
-            temp = getInt(rope_misc) + getInt(rope_mod) + getInt(rope_rank)
-            rope_tot.setText(temp.toString())
-            temp = getInt(device_misc) + getInt(device_mod) + getInt(device_rank)
-            device_tot.setText(temp.toString())
-            temp = getInt(tumble_misc) + getInt(tumble_mod) + getInt(tumble_rank)
-            tumble_tot.setText(temp.toString())
-            temp = getInt(swim_misc) + getInt(swim_mod) + getInt(swim_rank)
-            swim_tot.setText(temp.toString())
-            temp = getInt(surv_misc) + getInt(surv_mod) + getInt(surv_rank)
-            surv_tot.setText(temp.toString())
-            temp = getInt(spot_misc) + getInt(spot_mod) + getInt(spot_rank)
-            spot.setText(temp.toString())
-            temp = getInt(spell_misc) + getInt(spell_mod) + getInt(spell_rank)
-            spell_tot.setText(temp.toString())
-            temp = getInt(pick_misc) + getInt(pick_mod) + getInt(pick_rank)
-            pick_tot.setText(temp.toString())
-            temp = getInt(motive_misc) + getInt(motive_mod) + getInt(motive_rank)
-            motive_tot.setText(temp.toString())
-            temp = getInt(search_misc) + getInt(search_mod) + getInt(search_rank)
-            search_tot.setText(temp.toString())
+            rope_tot.setText(getInt(rope_misc, rope_mod, rope_rank).toString())
+            device_tot.setText(getInt(device_misc, device_mod, device_rank).toString())
+            tumble_tot.setText(getInt(tumble_misc, tumble_mod, tumble_rank).toString())
+            swim_tot.setText(getInt(swim_misc, swim_mod, swim_rank).toString())
+            surv_tot.setText(getInt(surv_misc, surv_mod, surv_rank).toString())
+            spot_tot.setText(getInt(spot_misc, spot_mod, spot_rank).toString())
+            spell_tot.setText(getInt(spell_misc, spell_mod, spell_rank).toString())
+            pick_tot.setText(getInt(pick_misc, pick_mod, pick_rank).toString())
+            motive_tot.setText(getInt(motive_misc, motive_mod, motive_rank).toString())
+            search_tot.setText(getInt(search_misc, search_mod, search_rank).toString())
         }
     }
 
-    fun getInt(edit: EditText):Int
+    fun getInt(edit: EditText, edit_2: EditText, edit_3: EditText):Int
     {
-        return edit.text.toString().toInt()
+
+        return edit.text.toString().toInt() + edit_2.text.toString().toInt() + edit_3.text.toString().toInt()
     }
 }
