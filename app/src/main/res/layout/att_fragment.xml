@@ -47,9 +47,19 @@
                         android:textColor="#FFFFFF"
                         android:layout_width="match_parent"
                         android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
                         android:inputType="number"
                         android:id="@+id/str"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="0"
+                        android:textSize="40sp"
+                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
+                        android:id="@+id/str_mod"/>
                 </TableRow>
                 <TableRow
                     android:layout_height="match_parent"
@@ -67,9 +77,19 @@
                         android:layout_width="match_parent"
                         android:textColor="#FFFFFF"
                         android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
                         android:inputType="number"
                         android:id="@+id/dex"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="0"
+                        android:textSize="40sp"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/dex_mod"/>
                 </TableRow>
                 <TableRow
                     android:layout_height="match_parent"
@@ -86,9 +106,19 @@
                         android:layout_width="match_parent"
                         android:textColor="#FFFFFF"
                         android:textSize="40sp"
+                        android:text="0"
                         android:inputType="number"
                         android:textAlignment="center"
                         android:id="@+id/inte"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="0"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginTop="10dp"
+                        android:textSize="40sp"
+                        android:textAlignment="center"
+                        android:id="@+id/int_mod"/>
                 </TableRow>
                 <TableRow
                     android:layout_height="match_parent"
@@ -105,9 +135,19 @@
                         android:layout_width="match_parent"
                         android:textColor="#FFFFFF"
                         android:textSize="40sp"
+                        android:text="0"
                         android:inputType="number"
                         android:textAlignment="center"
                         android:id="@+id/wis"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/wis_mod"/>
                 </TableRow>
                 <TableRow
                     android:layout_height="match_parent"
@@ -124,9 +164,19 @@
                         android:layout_width="match_parent"
                         android:textColor="#FFFFFF"
                         android:textSize="40sp"
+                        android:text="0"
                         android:inputType="number"
                         android:textAlignment="center"
                         android:id="@+id/con"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="0"
+                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:id="@+id/con_mod"/>
                 </TableRow>
                 <TableRow
                     android:layout_height="match_parent"
@@ -143,12 +193,36 @@
                         android:layout_width="match_parent"
                         android:textColor="#FFFFFF"
                         android:textSize="40sp"
+                        android:text="0"
                         android:inputType="number"
                         android:textAlignment="center"
                         android:id="@+id/cha"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:text="0"
+                        android:textSize="40sp"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:id="@+id/cha_mod"/>
                 </TableRow>
 
             </TableLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/test_area"
+                android:textSize="20sp"
+                android:text="testing area"
+                android:textColor="#FFFFFF"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Generate Attributes"
+                android:textSize="38sp"
+                android:id="@+id/gen_att"
+                android:textAlignment="center"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

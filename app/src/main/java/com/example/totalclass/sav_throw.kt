@@ -2,5 +2,5 @@ package com.example.totalclass
 
 import androidx.fragment.app.Fragment
 
-class sav_throw: Fragment(R.layout.sav_throw) {
+class SavingThrow(file_name: String): Fragment(R.layout.sav_throw) {
 }

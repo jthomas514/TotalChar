@@ -13,26 +13,27 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 
 class MainActivity : AppCompatActivity() {
+    var charName = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val attFrag = Attribut()
-        val skillfrag = skils()
-        val savingThrow = sav_throw()
-        val weap_c = weap()
+
+        charName = intent.getStringExtra("file_name").toString()
+
+        //Toast.makeText(this, charName, Toast.LENGTH_LONG).show()
 
 
         attribut.setOnClickListener(){
-            setCurrentFragment(attFrag)
+            setCurrentFragment(Attribute(charName))
         }
         skills.setOnClickListener(){
-            setCurrentFragment(skillfrag)
+            setCurrentFragment(Skills(charName))
         }
         sav_throw.setOnClickListener(){
-            setCurrentFragment(savingThrow)
+            setCurrentFragment(SavingThrow(charName))
         }
         weapon.setOnClickListener(){
-            setCurrentFragment(weap_c)
+            setCurrentFragment(Weap(charName))
         }
 
     }

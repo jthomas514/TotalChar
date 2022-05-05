@@ -19,13 +19,12 @@
                 android:id="@+id/skill_tab">
 
                 <TableRow
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Skill"
-                        android:layout_above="@id/appr"
                         android:textSize="40sp"
                         android:textStyle="bold"/>
                     <TextView
@@ -63,28 +62,33 @@
                         android:text="Appraise"
                         android:textSize="30sp"
                         android:id="@+id/appr"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/appr_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:hint="Int"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/appr_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/appr_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/appr_misc"/>
                 </TableRow>
@@ -99,28 +103,33 @@
                         android:text="Balance"
                         android:textSize="30sp"
                         android:id="@+id/bal"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/bal_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:hint="dex"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/bal_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/bal_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/bal_misc"/>
                 </TableRow>
@@ -135,28 +144,33 @@
                         android:text="Bluff"
                         android:textSize="30sp"
                         android:id="@+id/bluff"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:hint="cha"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/bluff_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/bluff_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/bluff_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/bluff_misc"/>
                 </TableRow>
@@ -171,28 +185,33 @@
                         android:text="Climb"
                         android:textSize="30sp"
                         android:id="@+id/climb"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/climb_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="str"
                         android:textAlignment="center"
                         android:id="@+id/climb_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/climb_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/climb_misc"/>
                 </TableRow>
@@ -207,28 +226,33 @@
                         android:text="Concentration"
                         android:textSize="28sp"
                         android:id="@+id/conc"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/conc_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="con"
                         android:textAlignment="center"
                         android:id="@+id/conc_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/conc_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/conc_misc"/>
                 </TableRow>
@@ -243,28 +267,33 @@
                         android:text="Decipher Script"
                         android:textSize="26sp"
                         android:id="@+id/decscript"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/decscript_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="int"
                         android:textAlignment="center"
                         android:id="@+id/decscrit_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/decscript_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/decscript_misc"/>
                 </TableRow>
@@ -279,28 +308,33 @@
                         android:text="Diplomacy"
                         android:textSize="30sp"
                         android:id="@+id/diplo"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/diplo_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="cha"
                         android:textAlignment="center"
                         android:id="@+id/diplo_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/diplo_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/diplo_misc"/>
                 </TableRow>
@@ -314,31 +348,36 @@
                         android:layout_gravity="start"
                         android:text="Disable Device"
                         android:textSize="27sp"
-                        android:id="@+id/disDev"/>
+                        android:id="@+id/dis_dev"/>
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:text="0"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:id="@+id/dis_dev_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="int"
                         android:textAlignment="center"
-                        android:id="@+id/disDev_tot"/>
+                        android:id="@+id/dis_dev_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
-                        android:id="@+id/disDev_mod"/>
+                        android:id="@+id/dis_dev_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
-                        android:id="@+id/disDev_rank"/>
-                    <EditText
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:inputType="number"
-                        android:textAlignment="center"
-                        android:id="@+id/disDev_misc"/>
+                        android:id="@+id/dis_dev_misc"/>
                 </TableRow>
 
                 <TableRow
@@ -351,28 +390,33 @@
                         android:text="Disguise"
                         android:textSize="30sp"
                         android:id="@+id/disg"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/disg_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="cha"
                         android:textAlignment="center"
                         android:id="@+id/disg_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/disg_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/disg_misc"/>
                 </TableRow>
@@ -387,28 +431,33 @@
                         android:text="Escape Artist"
                         android:textSize="30sp"
                         android:id="@+id/esc"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/esc_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/esc_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/esc_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/esc_misc"/>
                 </TableRow>
@@ -423,28 +472,33 @@
                         android:text="Forgery"
                         android:textSize="30sp"
                         android:id="@+id/forge"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/forge_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="int"
                         android:textAlignment="center"
                         android:id="@+id/forge_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/forge_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/forge_misc"/>
                 </TableRow>
@@ -459,28 +513,33 @@
                         android:text="Gather Information"
                         android:textSize="21sp"
                         android:id="@+id/info"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/info_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="cha"
                         android:textAlignment="center"
                         android:id="@+id/info_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/info_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/info_misc"/>
                 </TableRow>
@@ -495,28 +554,33 @@
                         android:text="Handle Animal"
                         android:textSize="28sp"
                         android:id="@+id/anim"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/anim_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="cha"
                         android:textAlignment="center"
                         android:id="@+id/anim_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/anim_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/anim_misc"/>
                 </TableRow>
@@ -531,28 +595,33 @@
                         android:text="Heal"
                         android:textSize="30sp"
                         android:id="@+id/heal"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/heal_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="wis"
                         android:textAlignment="center"
                         android:id="@+id/heal_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/heal_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/heal_misc"/>
                 </TableRow>
@@ -567,28 +636,33 @@
                         android:text="Hide"
                         android:textSize="30sp"
                         android:id="@+id/hide"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/hide_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/hide_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/hide_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/hide_misc"/>
                 </TableRow>
@@ -603,28 +677,33 @@
                         android:text="Intimidate"
                         android:textSize="30sp"
                         android:id="@+id/intim"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/intim_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="cha"
                         android:textAlignment="center"
                         android:id="@+id/intim_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/intim_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/intim_misc"/>
                 </TableRow>
@@ -639,28 +718,33 @@
                         android:text="Jump"
                         android:textSize="30sp"
                         android:id="@+id/jump"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/jump_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="str"
                         android:textAlignment="center"
                         android:id="@+id/jump_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/jump_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/jump_misc"/>
                 </TableRow>
@@ -675,28 +759,33 @@
                         android:text="Listen"
                         android:textSize="30sp"
                         android:id="@+id/listen"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/listen_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="wis"
                         android:textAlignment="center"
                         android:id="@+id/listen_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/listen_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/listen_misc"/>
                 </TableRow>
@@ -711,28 +800,33 @@
                         android:text="Move Silent"
                         android:textSize="30sp"
                         android:id="@+id/silent"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/silent_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/silent_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/silent_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/silent_misc"/>
                 </TableRow>
@@ -747,28 +841,33 @@
                         android:text="Open Lock"
                         android:textSize="30sp"
                         android:id="@+id/open"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/open_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/open_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/open_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/open_misc"/>
                 </TableRow>
@@ -783,28 +882,33 @@
                         android:text="Ride"
                         android:textSize="30sp"
                         android:id="@+id/ride"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/ride_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/ride_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/ride_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/ride_misc"/>
                 </TableRow>
@@ -819,28 +923,33 @@
                         android:text="Search"
                         android:textSize="30sp"
                         android:id="@+id/search"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/search_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="int"
                         android:textAlignment="center"
                         android:id="@+id/search_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/search_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/search_misc"/>
                 </TableRow>
@@ -855,28 +964,33 @@
                         android:text="Sense Motive"
                         android:textSize="30sp"
                         android:id="@+id/motive"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/motive_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="wis"
                         android:textAlignment="center"
                         android:id="@+id/motive_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/motive_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/motive_misc"/>
                 </TableRow>
@@ -891,28 +1005,33 @@
                         android:text="Sleight Hand"
                         android:textSize="30sp"
                         android:id="@+id/pick"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/pick_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/pick_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/pick_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/pick_misc"/>
                 </TableRow>
@@ -927,28 +1046,33 @@
                         android:text="Spellcraft"
                         android:textSize="30sp"
                         android:id="@+id/spell"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/spell_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="int"
                         android:textAlignment="center"
                         android:id="@+id/spell_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/spell_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/spell_misc"/>
                 </TableRow>
@@ -963,28 +1087,33 @@
                         android:text="Spot"
                         android:textSize="30sp"
                         android:id="@+id/spot"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/spot_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="wis"
                         android:textAlignment="center"
                         android:id="@+id/spot_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/spot_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/spot_misc"/>
                 </TableRow>
@@ -999,28 +1128,33 @@
                         android:text="Survival"
                         android:textSize="30sp"
                         android:id="@+id/surv"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/surv_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="wis"
                         android:textAlignment="center"
                         android:id="@+id/surv_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/surv_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/surv_misc"/>
                 </TableRow>
@@ -1035,28 +1169,33 @@
                         android:text="Swim"
                         android:textSize="30sp"
                         android:id="@+id/swim"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/swim_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="str"
                         android:textAlignment="center"
                         android:id="@+id/swim_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/swim_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/swim_misc"/>
                 </TableRow>
@@ -1071,28 +1210,33 @@
                         android:text="Tumble"
                         android:textSize="30sp"
                         android:id="@+id/tumble"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/tumble_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/tumble_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/tumble_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/tumble_misc"/>
                 </TableRow>
@@ -1107,28 +1251,34 @@
                         android:text="Use Magic Device"
                         android:textSize="23sp"
                         android:id="@+id/device"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/device_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="cha"
                         android:textAlignment="center"
                         android:id="@+id/device_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:hint="Wis"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/device_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/device_misc"/>
                 </TableRow>
@@ -1143,28 +1293,33 @@
                         android:text="Use Rope"
                         android:textSize="30sp"
                         android:id="@+id/rope"/>
-                    <EditText
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
-                        android:inputType="number"
+                        android:text="0"
+                        android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/rope_tot"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
+                        android:hint="dex"
                         android:textAlignment="center"
                         android:id="@+id/rope_mod"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/rope_rank"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/rope_misc"/>
                 </TableRow>
