@@ -209,13 +209,6 @@
                 </TableRow>
 
             </TableLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/test_area"
-                android:textSize="20sp"
-                android:text="testing area"
-                android:textColor="#FFFFFF"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
