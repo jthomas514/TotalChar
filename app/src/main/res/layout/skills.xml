@@ -73,10 +73,10 @@
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
-                        android:hint="Int"
+                        android:hint="int"
                         android:text="0"
                         android:textAlignment="center"
-                        android:id="@+id/appr_mod"/>
+                        android:id="@+id/appr_mod" />
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
@@ -148,7 +148,6 @@
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:text="0"
-                        android:hint="cha"
                         android:textSize="30sp"
                         android:textAlignment="center"
                         android:id="@+id/bluff_tot"/>
@@ -156,6 +155,7 @@
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:hint="cha"
                         android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/bluff_mod"/>

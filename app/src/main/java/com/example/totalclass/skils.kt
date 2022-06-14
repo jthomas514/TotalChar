@@ -4,16 +4,82 @@ import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.att_fragment.*
 import kotlinx.android.synthetic.main.skills.*
+import kotlinx.android.synthetic.main.skills.view.*
+import org.w3c.dom.Attr
+import java.io.File
 
 class Skills(file_name: String): Fragment(R.layout.skills) {
+
+    private val att = Attribute(file_name)
+    var char_name = file_name
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val load = File(context?.filesDir, char_name)
+        var file_content = load.readText()
+
+        val str_pattern = "Strength\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val dex_pattern = "Dexterity\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val int_pattern = "Intelligence\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val wis_pattern = "Wisdom\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val con_pattern = "Constitution\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val char_pattern = "Charisma\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        var val_pattern = "\\d+".toRegex()
+        var str_mod = 0
+        var dex_mod = 0
+        var int_mod = 0
+        var wis_mod = 0
+        var con_mod = 0
+        var char_mod = 0
+        val modifiers = arrayOf<EditText>(appr_mod, bal_mod, bluff_mod, climb_mod, conc_mod, decscrit_mod,
+                                        diplo_mod, dis_dev_mod, disg_mod, esc_mod, forge_mod, info_mod, anim_mod,
+                                        heal_mod, hide_mod, intim_mod, jump_mod, listen_mod, silent_mod,
+                                        open_mod, ride_mod, search_mod, motive_mod, pick_mod, spell_mod,
+                                        spot_mod, surv_mod, swim_mod, tumble_mod, device_mod, rope_mod)
+
+        if(file_content != ""){
+            var temp_match = str_pattern.find(file_content)
+            var temp_value = val_pattern.find(temp_match!!.value)
+            str_mod = att.calc_modifier(temp_value!!.value.toInt())
+
+            temp_match = dex_pattern.find(file_content)
+            temp_value = val_pattern.find(temp_match!!.value)
+            dex_mod = att.calc_modifier(temp_value!!.value.toInt())
+
+            temp_match = int_pattern.find(file_content)
+            temp_value = val_pattern.find(temp_match!!.value)
+            int_mod = att.calc_modifier(temp_value!!.value.toInt())
+
+            temp_match = wis_pattern.find(file_content)
+            temp_value = val_pattern.find(temp_match!!.value)
+            wis_mod = att.calc_modifier(temp_value!!.value.toInt())
+
+            temp_match = con_pattern.find(file_content)
+            temp_value = val_pattern.find(temp_match!!.value)
+            con_mod = att.calc_modifier(temp_value!!.value.toInt())
+
+            temp_match = char_pattern.find(file_content)
+            temp_value = val_pattern.find(temp_match!!.value)
+            char_mod = att.calc_modifier(temp_value!!.value.toInt())
+        }
+
+        for(i in modifiers){
+            when (i.hint) {
+                "str" -> i.setText(str_mod.toString())
+                "dex" -> i.setText(dex_mod.toString())
+                "int" -> i.setText(int_mod.toString())
+                "wis" -> i.setText(wis_mod.toString())
+                "con" -> i.setText(con_mod.toString())
+                "cha" -> i.setText(char_mod.toString())
+            }
+        }
+
         skill_save.setOnClickListener(){
-            skill_mod(swim_mod)
             rope_tot.text = getInt(rope_misc, rope_mod, rope_rank).toString()
             device_tot.text = getInt(device_misc, device_mod, device_rank).toString()
             tumble_tot.text = getInt(tumble_misc, tumble_mod, tumble_rank).toString()
@@ -54,8 +120,5 @@ class Skills(file_name: String): Fragment(R.layout.skills) {
     }
 
     fun skill_mod(edit: EditText){
-        when(edit.hint){
-            "str" -> edit.setText(800.toString())
-        }
     }
 }
