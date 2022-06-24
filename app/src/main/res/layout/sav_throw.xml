@@ -32,13 +32,15 @@
                         android:layout_height="match_parent"
                         android:text="Health"
                         android:textSize="40sp"/>
+
                     <EditText
-                        android:layout_height="match_parent"
+                        android:id="@+id/health_tot"
                         android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:inputType="number"
-                        android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
-                        android:id="@+id/health_tot"/>
+                        android:textSize="40sp" />
                 </TableRow>
 
                 <TableRow
@@ -86,36 +88,42 @@
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/fort_total"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
-                        android:id="@+id/for_base"/>
+                        android:text="0"
+                        android:id="@+id/fort_base"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/fort_mod"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/fort_mag"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/fort_misc"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/fort_temp"/>
                 </TableRow>
 
@@ -132,36 +140,42 @@
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/ref_total"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/ref_base"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/ref_mod"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/ref_mag"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/ref_misc"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/ref_temp"/>
                 </TableRow>
 
@@ -178,36 +192,42 @@
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/will_total"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/will_base"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/will_mod"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/will_mag"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/will_misc"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:id="@+id/will_temp"/>
                 </TableRow>
 
@@ -237,6 +257,7 @@
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/baseAtt"/>
                 </TableRow>
@@ -260,6 +281,7 @@
                         android:layout_height="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/grap_tot"/>
                     <EditText
@@ -267,19 +289,22 @@
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/grap_base"/>
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:textSize="40sp"
-                        android:id="@+id/grab_str"/>
+                        android:id="@+id/grap_str"/>
                     <EditText
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:textSize="40sp"
                         android:id="@+id/grap_size"/>
@@ -287,6 +312,7 @@
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:inputType="number"
+                        android:text="0"
                         android:textAlignment="center"
                         android:textSize="40sp"
                         android:id="@+id/grap_misc"/>
@@ -333,6 +359,7 @@
                         android:layout_width="match_parent"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/nat_arm"/>
                 </TableRow>
@@ -349,6 +376,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:textSize="40sp"
+                        android:text="0"
                         android:textAlignment="center"
                         android:id="@+id/deflect"/>
                 </TableRow>
@@ -365,7 +393,77 @@
                         android:layout_width="wrap_content"
                         android:inputType="number"
                         android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:text="0"
+                        android:id="@+id/armor_misc"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Armor Bonus"
                         android:textSize="40sp"/>
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:text="0"
+                        android:id="@+id/armor_bonus"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Shield Bonus"
+                        android:textSize="40sp"/>
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:text="0"
+                        android:id="@+id/shield_bonus"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dex Modifier"
+                        android:textSize="40sp"/>
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:text="0"
+                        android:id="@+id/arm_dex_mod"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Size Modifier"
+                        android:textSize="40sp"/>
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="40sp"
+                        android:text="0"
+                        android:id="@+id/size_mod"/>
                 </TableRow>
             </TableLayout>
             <Button

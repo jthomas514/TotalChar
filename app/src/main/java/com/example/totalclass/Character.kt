@@ -35,12 +35,12 @@ class Character : AppCompatActivity() {
         //Toast.makeText(applicationContext, nameOfChar, Toast.LENGTH_SHORT).show()
         val file = File(applicationContext.filesDir, nameOfChar)
         val isNewFileCreated :Boolean = file.createNewFile()
-        if(isNewFileCreated){
-            Toast.makeText(applicationContext, "File created", Toast.LENGTH_SHORT).show()
-        }
-        else{
-            Toast.makeText(applicationContext, "File not created", Toast.LENGTH_SHORT).show()
-        }
+//        if(isNewFileCreated){
+//            Toast.makeText(applicationContext, "File created", Toast.LENGTH_SHORT).show()
+//        }
+//        else{
+//            Toast.makeText(applicationContext, "File not created", Toast.LENGTH_SHORT).show()
+//        }
     }
 
 }

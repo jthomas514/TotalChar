@@ -21,7 +21,10 @@ class Attribute(file_name: String):Fragment(R.layout.att_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         val load = File(context?.filesDir, charName)
-        val fileContent = load.readText()
+        //val fileContent = load.readText()
+        //file clearer
+        val fileContent = ""
+        load.writeText(fileContent)
 
         val str_pattern = "Strength\\sModifier\\s\\d+\\s-?\\d+".toRegex()
         val dex_pattern = "Dexterity\\sModifier\\s\\d+\\s-?\\d+".toRegex()
@@ -30,9 +33,9 @@ class Attribute(file_name: String):Fragment(R.layout.att_fragment) {
         val con_pattern = "Constitution\\sModifier\\s\\d+\\s-?\\d+".toRegex()
         val char_pattern = "Charisma\\sModifier\\s\\d+\\s-?\\d+".toRegex()
         var val_pattern = "\\d+".toRegex()
+        var tempMatch = str_pattern.find(fileContent)
 
-        if(fileContent != "") {
-            var tempMatch = str_pattern.find(fileContent)
+        if(fileContent != "" && tempMatch != null) {
             var temp_value = val_pattern.find(tempMatch!!.value)
             var temp_num = calc_modifier(temp_value!!.value.toInt())
             str.setText(temp_value?.value)
@@ -101,18 +104,18 @@ class Attribute(file_name: String):Fragment(R.layout.att_fragment) {
             calc_modifier(con, con_mod)
             calc_modifier(cha, cha_mod)
 
-            if(file_content == "") {
-                file.printWriter().use{ out ->
-                    out.println("_____Attributes_____")
-                    out.println("Strength Modifier "+ str.text.toString() +" "+ str_mod.text.toString())
-                    out.println("Dexterity Modifier "+ dex.text.toString() +" "+ dex_mod.text.toString())
-                    out.println("Intelligence Modifier "+ inte.text.toString() +" "+ int_mod.text.toString())
-                    out.println("Wisdom Modifier "+ wis.text.toString() +" "+ wis_mod.text.toString())
-                    out.println("Constitution Modifier "+ con.text.toString() +" "+ con_mod.text.toString())
-                    out.println("Charisma Modifier "+ cha.text.toString() +" "+ cha_mod.text.toString())
-                    out.println()
-                    out.println()
-                }
+            var checker = str_pattern.find(fileContent)//this is to check to see if this is here
+                                                    //if it is not then we assume this page has not been saved
+
+            if(checker == null){
+                file_content = file_content + "_____Attributes_____\n"
+                file_content = (file_content + "Strength Modifier "+ str.text.toString() +" "+ str_mod.text.toString()+"\n")
+                file_content = (file_content + "Dexterity Modifier "+ dex.text.toString() +" "+ dex_mod.text.toString()+"\n")
+                file_content = (file_content + "Intelligence Modifier "+ inte.text.toString() +" "+ int_mod.text.toString()+"\n")
+                file_content = (file_content + "Wisdom Modifier "+ wis.text.toString() +" "+ wis_mod.text.toString()+"\n")
+                file_content = (file_content + "Constitution Modifier "+ con.text.toString() +" "+ con_mod.text.toString()+"\n")
+                file_content = (file_content + "Charisma Modifier "+ cha.text.toString() +" "+ cha_mod.text.toString()+"\n")
+                file.writeText(file_content)
             }
 
             else{

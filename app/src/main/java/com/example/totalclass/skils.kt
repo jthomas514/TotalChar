@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.att_fragment.*
 import kotlinx.android.synthetic.main.skills.*
-import kotlinx.android.synthetic.main.skills.view.*
-import org.w3c.dom.Attr
+
 import java.io.File
 
 class Skills(file_name: String): Fragment(R.layout.skills) {
@@ -36,36 +36,80 @@ class Skills(file_name: String): Fragment(R.layout.skills) {
         var wis_mod = 0
         var con_mod = 0
         var char_mod = 0
-        val modifiers = arrayOf<EditText>(appr_mod, bal_mod, bluff_mod, climb_mod, conc_mod, decscrit_mod,
+        val modifiers = arrayOf<EditText>(appr_mod, bal_mod, bluff_mod, climb_mod, conc_mod, decscript_mod,
                                         diplo_mod, dis_dev_mod, disg_mod, esc_mod, forge_mod, info_mod, anim_mod,
                                         heal_mod, hide_mod, intim_mod, jump_mod, listen_mod, silent_mod,
                                         open_mod, ride_mod, search_mod, motive_mod, pick_mod, spell_mod,
                                         spot_mod, surv_mod, swim_mod, tumble_mod, device_mod, rope_mod)
+        val ranks = arrayOf<EditText>(appr_rank, bal_rank, bluff_rank, climb_rank, conc_rank, decscript_rank,
+                                    diplo_rank, dis_dev_rank, disg_rank, esc_rank, forge_rank, info_rank, anim_rank,
+                                    heal_rank, hide_rank, intim_rank, jump_rank, listen_rank, silent_rank,
+                                    open_rank, ride_rank, search_rank, motive_rank, pick_rank, spell_rank,
+                                    spot_rank, surv_rank, swim_rank, tumble_rank, device_rank, rope_rank)
+        val miscs = arrayOf<EditText>(appr_misc, bal_misc, bluff_misc, climb_misc, conc_misc, decscript_misc,
+                                    diplo_misc, dis_dev_misc, disg_misc, esc_misc, forge_misc, info_misc, anim_misc,
+                                    heal_misc, hide_misc, intim_misc, jump_misc, listen_misc, silent_misc,
+                                    open_misc, ride_misc, search_misc, motive_misc, pick_misc, spell_misc,
+                                    spot_misc, surv_misc, swim_misc, tumble_misc, device_misc, rope_misc)
+        val skills = arrayOf<TextView>(appr_tot, bal_tot, bluff_tot, climb_tot, conc_tot, decscript_tot,
+                                    diplo_tot, dis_dev_tot, disg_tot, esc_tot, forge_tot, info_tot, anim_tot,
+                                    heal_tot, hide_tot, intim_tot, jump_tot, listen_tot, silent_tot,
+                                    open_tot, ride_tot, search_tot, motive_tot, pick_tot, spell_tot,
+                                    spot_tot, surv_tot, swim_tot, tumble_tot, device_tot, rope_tot)
+        val names = arrayOf(appr, bal, bluff, climb, conc, decscript, diplo, dis_dev, disg, esc, forge,
+                            info, anim, heal, hide, intim, jump, listen, silent, open, ride, search,
+                            motive, pick, spell, spot, surv, swim, tumble, device, rope)
 
         if(file_content != ""){
             var temp_match = str_pattern.find(file_content)
-            var temp_value = val_pattern.find(temp_match!!.value)
-            str_mod = att.calc_modifier(temp_value!!.value.toInt())
+            var temp_value:MatchResult?
+            if(temp_match!= null) {
+                temp_value = val_pattern.find(temp_match!!.value)
+                str_mod = att.calc_modifier(temp_value!!.value.toInt())
+            }
 
             temp_match = dex_pattern.find(file_content)
-            temp_value = val_pattern.find(temp_match!!.value)
-            dex_mod = att.calc_modifier(temp_value!!.value.toInt())
+            if(temp_match != null) {
+                temp_value = val_pattern.find(temp_match!!.value)
+                dex_mod = att.calc_modifier(temp_value!!.value.toInt())
+            }
 
             temp_match = int_pattern.find(file_content)
-            temp_value = val_pattern.find(temp_match!!.value)
-            int_mod = att.calc_modifier(temp_value!!.value.toInt())
+            if(temp_match != null) {
+                temp_value = val_pattern.find(temp_match!!.value)
+                int_mod = att.calc_modifier(temp_value!!.value.toInt())
+            }
 
             temp_match = wis_pattern.find(file_content)
-            temp_value = val_pattern.find(temp_match!!.value)
-            wis_mod = att.calc_modifier(temp_value!!.value.toInt())
+            if(temp_match != null) {
+                temp_value = val_pattern.find(temp_match!!.value)
+                wis_mod = att.calc_modifier(temp_value!!.value.toInt())
+            }
 
             temp_match = con_pattern.find(file_content)
-            temp_value = val_pattern.find(temp_match!!.value)
-            con_mod = att.calc_modifier(temp_value!!.value.toInt())
+            if(temp_match != null) {
+                temp_value = val_pattern.find(temp_match!!.value)
+                con_mod = att.calc_modifier(temp_value!!.value.toInt())
+            }
 
             temp_match = char_pattern.find(file_content)
-            temp_value = val_pattern.find(temp_match!!.value)
-            char_mod = att.calc_modifier(temp_value!!.value.toInt())
+            if(temp_match != null) {
+                temp_value = val_pattern.find(temp_match!!.value)
+                char_mod = att.calc_modifier(temp_value!!.value.toInt())
+            }
+            var iter = 0
+            while(iter < names.size){
+                var temp_pattern = (names.elementAt(iter).text.toString() + "\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
+                temp_match = temp_pattern.find(file_content)
+                if(temp_match == null)
+                    break
+                var temp_sequence = val_pattern.findAll(temp_match!!.value).map{it.value}.toList()
+                skills.elementAt(iter).text = temp_sequence.elementAt(0).toString()
+                modifiers.elementAt(iter).setText(temp_sequence.elementAt(1).toString())
+                ranks.elementAt(iter).setText(temp_sequence.elementAt(2).toString())
+                miscs.elementAt(iter).setText(temp_sequence.elementAt(3).toString())
+                iter++
+            }
         }
 
         for(i in modifiers){
@@ -79,46 +123,49 @@ class Skills(file_name: String): Fragment(R.layout.skills) {
             }
         }
 
-        skill_save.setOnClickListener(){
-            rope_tot.text = getInt(rope_misc, rope_mod, rope_rank).toString()
-            device_tot.text = getInt(device_misc, device_mod, device_rank).toString()
-            tumble_tot.text = getInt(tumble_misc, tumble_mod, tumble_rank).toString()
-            swim_tot.text = getInt(swim_misc, swim_mod, swim_rank).toString()
-            surv_tot.text = getInt(surv_misc, surv_mod, surv_rank).toString()
-            spot_tot.text = getInt(spot_misc, spot_mod, spot_rank).toString()
-            spell_tot.text = getInt(spell_misc, spell_mod, spell_rank).toString()
-            pick_tot.text = getInt(pick_misc, pick_mod, pick_rank).toString()
-            motive_tot.text = getInt(motive_misc, motive_mod, motive_rank).toString()
-            search_tot.text = getInt(search_misc, search_mod, search_rank).toString()
-            ride_tot.text = getInt(ride_misc, ride_mod, ride_rank).toString()
-            open_tot.text = getInt(open_misc, open_mod, open_rank).toString()
-            silent_tot.text = getInt(silent_misc, silent_mod, silent_rank).toString()
-            listen_tot.text = getInt(listen_misc, listen_mod, listen_rank).toString()
-            jump_tot.text = getInt(jump_misc, jump_mod, jump_rank).toString()
-            intim_tot.text = getInt(intim_misc, intim_mod, intim_rank).toString()
-            hide_tot.text = getInt(hide_misc, hide_mod, hide_rank).toString()
-            heal_tot.text = getInt(heal_misc, heal_mod, heal_rank).toString()
-            anim_tot.text = getInt(anim_misc, anim_mod, anim_rank).toString()
-            info_tot.text = getInt(info_misc, info_mod, info_rank).toString()
-            forge_tot.text = getInt(forge_misc, forge_mod, forge_rank).toString()
-            esc_tot.text = getInt(esc_misc, esc_mod, esc_rank).toString()
-            disg_tot.text = getInt(disg_misc, disg_mod, disg_rank).toString()
-            dis_dev_tot.text = getInt(dis_dev_misc, dis_dev_mod, dis_dev_rank).toString()
-            diplo_tot.text = getInt(diplo_misc, diplo_mod, diplo_rank).toString()
-            decscript_tot.text = getInt(decscript_misc, decscrit_mod, decscript_rank).toString()
-            conc_tot.text = getInt(conc_misc, conc_mod, conc_rank).toString()
-            climb_tot.text = getInt(climb_misc, climb_mod, climb_rank).toString()
-            bluff_tot.text = getInt(bluff_misc, bluff_mod, bluff_rank).toString()
-            bal_tot.text = getInt(bal_misc, bal_mod, bal_rank).toString()
-            appr_tot.text = getInt(appr_misc, appr_mod, appr_rank).toString()
+        skill_save.setOnClickListener(){//breaking in here
+            var skill_to_text = ""
+            var string_replacer = ""
+            var temp_new = ""
+            var temp_pattern = (names.elementAt(0).text.toString()+"\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
+            var temp_value = temp_pattern.find(file_content)
+            if(temp_value == null){//if break after the first check then have major problem
+                var i = 0
+                file_content += "_____Skill_____\n"
+
+                while(i < skills.size){
+                    skills.elementAt(i).text = getInt(modifiers.elementAt(i), ranks.elementAt(i), miscs.elementAt(i)).toString()
+                    skills[i].text = getInt(modifiers.elementAtOrNull(i)!!, ranks.elementAtOrNull(i)!!,
+                        miscs.elementAtOrNull(i)!!).toString()
+                    skill_to_text = (names.elementAt(i).text.toString() +" "+ skills.elementAt(i).text.toString()+
+                            " " + modifiers.elementAt(i).text.toString() +" " +
+                            ranks.elementAt(i).text.toString() + " " + miscs.elementAt(i).text.toString()+ "\n")
+                    file_content = file_content + skill_to_text
+                    i++
+                }
+                Toast.makeText(context, "it breaked", Toast.LENGTH_SHORT).show()
+                load.writeText(file_content)
+            }
+            else {
+                var iter = 0
+                while (iter < names.size) {
+                    skills.elementAt(iter).text = getInt(modifiers.elementAt(iter), ranks.elementAt(iter), miscs.elementAt(iter)).toString()
+                    temp_pattern = (names.elementAt(iter).text.toString() + "\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
+                    skill_to_text = names.elementAt(iter).text.toString() + " " + skills.elementAt(iter).text.toString() +
+                                " " + modifiers.elementAt(iter).text.toString() + " " +
+                                ranks.elementAt(iter).text.toString() + " " + miscs.elementAt(iter).text.toString()
+                    string_replacer = file_content.replace(temp_pattern, skill_to_text)
+                    file_content = string_replacer
+                    iter++
+                }
+
+                load.writeText(file_content)
+            }
         }
     }
 
     fun getInt(edit: EditText, edit_2: EditText, edit_3: EditText):Int
     {
         return edit.text.toString().toInt() + edit_2.text.toString().toInt() + edit_3.text.toString().toInt()
-    }
-
-    fun skill_mod(edit: EditText){
     }
 }
