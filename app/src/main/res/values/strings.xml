@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TotalClass</string>
+    <string name="weapons">Weapons</string>
+    <string name="type">Type</string>
+    <string name="attack_bonus">Attack Bonus</string>
+    <string name="damage">Damage</string>
+    <string name="critical">Critical</string>
+    <string name="range">Range</string>
 </resources>

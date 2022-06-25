@@ -1,13 +1,10 @@
 package com.example.totalclass
 
 import android.os.Bundle
-import android.text.Editable
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.att_fragment.*
 import kotlinx.android.synthetic.main.skills.*
 
 import java.io.File
@@ -15,27 +12,27 @@ import java.io.File
 class Skills(file_name: String): Fragment(R.layout.skills) {
 
     private val att = Attribute(file_name)
-    var char_name = file_name
+    private val charName = file_name
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val load = File(context?.filesDir, char_name)
-        var file_content = load.readText()
+        val load = File(context?.filesDir, charName)
+        var fileContent = load.readText()
 
-        val str_pattern = "Strength\\sModifier\\s\\d+\\s-?\\d+".toRegex()
-        val dex_pattern = "Dexterity\\sModifier\\s\\d+\\s-?\\d+".toRegex()
-        val int_pattern = "Intelligence\\sModifier\\s\\d+\\s-?\\d+".toRegex()
-        val wis_pattern = "Wisdom\\sModifier\\s\\d+\\s-?\\d+".toRegex()
-        val con_pattern = "Constitution\\sModifier\\s\\d+\\s-?\\d+".toRegex()
-        val char_pattern = "Charisma\\sModifier\\s\\d+\\s-?\\d+".toRegex()
-        var val_pattern = "\\d+".toRegex()
-        var str_mod = 0
-        var dex_mod = 0
-        var int_mod = 0
-        var wis_mod = 0
-        var con_mod = 0
-        var char_mod = 0
+        val strPattern = "Strength\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val dexPattern = "Dexterity\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val intPattern = "Intelligence\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val wisPattern = "Wisdom\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val conPattern = "Constitution\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val charPattern = "Charisma\\sModifier\\s\\d+\\s-?\\d+".toRegex()
+        val valPattern = "\\d+".toRegex()
+        var strMod = 0
+        var dexMod = 0
+        var intMod = 0
+        var wisMod = 0
+        var conMod = 0
+        var charMod = 0
         val modifiers = arrayOf<EditText>(appr_mod, bal_mod, bluff_mod, climb_mod, conc_mod, decscript_mod,
                                         diplo_mod, dis_dev_mod, disg_mod, esc_mod, forge_mod, info_mod, anim_mod,
                                         heal_mod, hide_mod, intim_mod, jump_mod, listen_mod, silent_mod,
@@ -60,111 +57,109 @@ class Skills(file_name: String): Fragment(R.layout.skills) {
                             info, anim, heal, hide, intim, jump, listen, silent, open, ride, search,
                             motive, pick, spell, spot, surv, swim, tumble, device, rope)
 
-        if(file_content != ""){
-            var temp_match = str_pattern.find(file_content)
-            var temp_value:MatchResult?
-            if(temp_match!= null) {
-                temp_value = val_pattern.find(temp_match!!.value)
-                str_mod = att.calc_modifier(temp_value!!.value.toInt())
+        if(fileContent != ""){
+            var tempMatch = strPattern.find(fileContent)
+            var tempValue:MatchResult?
+            if(tempMatch!= null) {
+                tempValue = valPattern.find(tempMatch.value)
+                strMod = att.calcModifier(tempValue!!.value.toInt())
             }
 
-            temp_match = dex_pattern.find(file_content)
-            if(temp_match != null) {
-                temp_value = val_pattern.find(temp_match!!.value)
-                dex_mod = att.calc_modifier(temp_value!!.value.toInt())
+            tempMatch = dexPattern.find(fileContent)
+            if(tempMatch != null) {
+                tempValue = valPattern.find(tempMatch.value)
+                dexMod = att.calcModifier(tempValue!!.value.toInt())
             }
 
-            temp_match = int_pattern.find(file_content)
-            if(temp_match != null) {
-                temp_value = val_pattern.find(temp_match!!.value)
-                int_mod = att.calc_modifier(temp_value!!.value.toInt())
+            tempMatch = intPattern.find(fileContent)
+            if(tempMatch != null) {
+                tempValue = valPattern.find(tempMatch.value)
+                intMod = att.calcModifier(tempValue!!.value.toInt())
             }
 
-            temp_match = wis_pattern.find(file_content)
-            if(temp_match != null) {
-                temp_value = val_pattern.find(temp_match!!.value)
-                wis_mod = att.calc_modifier(temp_value!!.value.toInt())
+            tempMatch = wisPattern.find(fileContent)
+            if(tempMatch != null) {
+                tempValue = valPattern.find(tempMatch.value)
+                wisMod = att.calcModifier(tempValue!!.value.toInt())
             }
 
-            temp_match = con_pattern.find(file_content)
-            if(temp_match != null) {
-                temp_value = val_pattern.find(temp_match!!.value)
-                con_mod = att.calc_modifier(temp_value!!.value.toInt())
+            tempMatch = conPattern.find(fileContent)
+            if(tempMatch != null) {
+                tempValue = valPattern.find(tempMatch.value)
+                conMod = att.calcModifier(tempValue!!.value.toInt())
             }
 
-            temp_match = char_pattern.find(file_content)
-            if(temp_match != null) {
-                temp_value = val_pattern.find(temp_match!!.value)
-                char_mod = att.calc_modifier(temp_value!!.value.toInt())
+            tempMatch = charPattern.find(fileContent)
+            if(tempMatch != null) {
+                tempValue = valPattern.find(tempMatch.value)
+                charMod = att.calcModifier(tempValue!!.value.toInt())
             }
             var iter = 0
             while(iter < names.size){
-                var temp_pattern = (names.elementAt(iter).text.toString() + "\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
-                temp_match = temp_pattern.find(file_content)
-                if(temp_match == null)
+                val tempPattern = (names.elementAt(iter).text.toString() + "\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
+                tempMatch = tempPattern.find(fileContent)
+                if(tempMatch == null)
                     break
-                var temp_sequence = val_pattern.findAll(temp_match!!.value).map{it.value}.toList()
-                skills.elementAt(iter).text = temp_sequence.elementAt(0).toString()
-                modifiers.elementAt(iter).setText(temp_sequence.elementAt(1).toString())
-                ranks.elementAt(iter).setText(temp_sequence.elementAt(2).toString())
-                miscs.elementAt(iter).setText(temp_sequence.elementAt(3).toString())
+                val tempSequence = valPattern.findAll(tempMatch.value).map{it.value}.toList()
+                skills.elementAt(iter).text = tempSequence.elementAt(0).toString()
+                modifiers.elementAt(iter).setText(tempSequence.elementAt(1).toString())
+                ranks.elementAt(iter).setText(tempSequence.elementAt(2).toString())
+                miscs.elementAt(iter).setText(tempSequence.elementAt(3).toString())
                 iter++
             }
         }
 
         for(i in modifiers){
             when (i.hint) {
-                "str" -> i.setText(str_mod.toString())
-                "dex" -> i.setText(dex_mod.toString())
-                "int" -> i.setText(int_mod.toString())
-                "wis" -> i.setText(wis_mod.toString())
-                "con" -> i.setText(con_mod.toString())
-                "cha" -> i.setText(char_mod.toString())
+                "str" -> i.setText(strMod.toString())
+                "dex" -> i.setText(dexMod.toString())
+                "int" -> i.setText(intMod.toString())
+                "wis" -> i.setText(wisMod.toString())
+                "con" -> i.setText(conMod.toString())
+                "cha" -> i.setText(charMod.toString())
             }
         }
 
-        skill_save.setOnClickListener(){//breaking in here
-            var skill_to_text = ""
-            var string_replacer = ""
-            var temp_new = ""
-            var temp_pattern = (names.elementAt(0).text.toString()+"\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
-            var temp_value = temp_pattern.find(file_content)
-            if(temp_value == null){//if break after the first check then have major problem
+        skill_save.setOnClickListener{//breaking in here
+            var skillToText:String
+            var stringReplacer:String
+            var tempPat = (names.elementAt(0).text.toString()+"\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
+            val tempValue = tempPat.find(fileContent)
+            if(tempValue == null){//if break after the first check then have major problem
                 var i = 0
-                file_content += "_____Skill_____\n"
+                fileContent += "_____Skill_____\n"
 
                 while(i < skills.size){
                     skills.elementAt(i).text = getInt(modifiers.elementAt(i), ranks.elementAt(i), miscs.elementAt(i)).toString()
                     skills[i].text = getInt(modifiers.elementAtOrNull(i)!!, ranks.elementAtOrNull(i)!!,
                         miscs.elementAtOrNull(i)!!).toString()
-                    skill_to_text = (names.elementAt(i).text.toString() +" "+ skills.elementAt(i).text.toString()+
+                    skillToText = (names.elementAt(i).text.toString() +" "+ skills.elementAt(i).text.toString()+
                             " " + modifiers.elementAt(i).text.toString() +" " +
                             ranks.elementAt(i).text.toString() + " " + miscs.elementAt(i).text.toString()+ "\n")
-                    file_content = file_content + skill_to_text
+                    fileContent += skillToText
                     i++
                 }
-                Toast.makeText(context, "it breaked", Toast.LENGTH_SHORT).show()
-                load.writeText(file_content)
+                load.writeText(fileContent)
             }
             else {
                 var iter = 0
                 while (iter < names.size) {
                     skills.elementAt(iter).text = getInt(modifiers.elementAt(iter), ranks.elementAt(iter), miscs.elementAt(iter)).toString()
-                    temp_pattern = (names.elementAt(iter).text.toString() + "\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
-                    skill_to_text = names.elementAt(iter).text.toString() + " " + skills.elementAt(iter).text.toString() +
+                    tempPat = (names.elementAt(iter).text.toString() + "\\s-?\\d+\\s-?\\d+\\s-?\\d+\\s-?\\d+").toRegex()
+                    skillToText = names.elementAt(iter).text.toString() + " " + skills.elementAt(iter).text.toString() +
                                 " " + modifiers.elementAt(iter).text.toString() + " " +
                                 ranks.elementAt(iter).text.toString() + " " + miscs.elementAt(iter).text.toString()
-                    string_replacer = file_content.replace(temp_pattern, skill_to_text)
-                    file_content = string_replacer
+                    stringReplacer = fileContent.replace(tempPat, skillToText)
+                    fileContent = stringReplacer
                     iter++
                 }
 
-                load.writeText(file_content)
+                load.writeText(fileContent)
             }
         }
     }
 
-    fun getInt(edit: EditText, edit_2: EditText, edit_3: EditText):Int
+    private fun getInt(edit: EditText, edit_2: EditText, edit_3: EditText):Int
     {
         return edit.text.toString().toInt() + edit_2.text.toString().toInt() + edit_3.text.toString().toInt()
     }
